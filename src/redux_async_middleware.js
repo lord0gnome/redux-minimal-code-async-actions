@@ -12,6 +12,7 @@ const asyncActionsMiddleware = store => next => action => {
         httpMethodToInvoke(...params)
             .then(resultsObj => {
                 const successType = generateSuccessActionTypeName(type);
+                console.log(resultsObj);
                 Promise.resolve(1).then(() => store.dispatch({
                     type: successType,
                     resultsObj
