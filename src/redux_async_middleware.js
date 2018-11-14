@@ -14,7 +14,7 @@ const asyncActionsMiddleware = store => next => action => {
                 const successType = generateSuccessActionTypeName(type);
                 Promise.resolve(1).then(() => store.dispatch({
                     type: successType,
-                    ...resultsObj
+                    resultsObj
                 }));
             })
             .catch(err => {
